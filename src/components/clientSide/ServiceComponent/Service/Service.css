@@ -1,0 +1,6 @@
+
+
+.view:hover .icon {
+    transform: translateX(15px);
+    transition-duration: 2s;
+}

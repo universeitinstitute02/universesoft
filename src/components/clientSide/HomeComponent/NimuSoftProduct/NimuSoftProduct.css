@@ -1,0 +1,4 @@
+.linkHover:hover .rightArrow {
+  transform: translateX(0.5rem);
+  font-weight: 800;
+}

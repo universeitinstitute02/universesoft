@@ -1,0 +1,12 @@
+@media screen and (max-width: 768px) {
+  .leftSide p {
+    display: none;
+    margin-left: 0;
+  }
+  .leftSide Link {
+    padding: 0 10px;
+  }
+  .leftSide > div {
+    padding: 0 8px;
+  }
+}

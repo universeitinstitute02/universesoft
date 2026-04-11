@@ -1,0 +1,37 @@
+.dropdown-container {
+  display: inline;
+  position: relative;
+  overflow: visible;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  transition: all 1s;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100px;
+  /* right: 10%; */
+  /* left: 100px; */
+  background: white;
+
+  text-align: left;
+  padding: 15px;
+  min-width: 600px;
+  /* display: none; */
+}
+
+.dropdown-content a {
+  display: block;
+}
+.dropdown-container:hover .dropdown-content {
+  display: flex;
+  top: 60px;
+  left: -30%;
+}
+li {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+a.active {
+  color: #da5c04;
+}
