@@ -4,14 +4,14 @@ import { IoChevronDown } from 'react-icons/io5';
 import { HiOutlineArrowRight } from 'react-icons/hi';
 import { TOUCH_LINKS, DROPDOWN_VARIANTS } from './navbarConstants';
 
-// ── মডার্ন গ্লাস ইফেক্ট ক্লাস ─────────────────────────────────
+// modern glass effect
 const navLinkClass = ({ isActive }) =>
   `px-4 py-2 rounded-xl text-[14px] font-semibold transition-all duration-300 whitespace-nowrap flex items-center gap-1.5
   ${isActive
     ? 'text-universe_primary bg-blue-50/80 shadow-sm border border-blue-100/50'
     : 'text-slate-600 hover:bg-slate-50 hover:text-universe_primary'}`;
 
-// ── মেগা মেনু আইটেম কম্পোনেন্ট ─────────────────────────────────
+    // mega menu item component
 const MegaItem = ({ to, title, description, logo, onClick }) => (
   <NavLink
     to={to}
@@ -32,7 +32,7 @@ const MegaItem = ({ to, title, description, logo, onClick }) => (
   </NavLink>
 );
 
-// ── মডার্ন মেগা প্যানেল (Products & Services) ───────────────────
+// product and service
 export const SharedMegaMenu = ({ items, type, onClose }) => (
   <motion.div
     variants={DROPDOWN_VARIANTS}
@@ -70,7 +70,6 @@ export const SharedMegaMenu = ({ items, type, onClose }) => (
   </motion.div>
 );
 
-// ── মেইন ডেক্সটপ নেভবার ─────────────────────────────────────────
 const DesktopNav = ({ allProducts, allservices, activeDropdown, toggleDropdown, closeAll }) => {
   return (
     <nav className="flex items-center gap-2">
@@ -86,6 +85,8 @@ const DesktopNav = ({ allProducts, allservices, activeDropdown, toggleDropdown, 
           Products
           <IoChevronDown className={`transition-transform duration-300 ${activeDropdown === 'products' ? 'rotate-180' : ''}`} />
         </button>
+        {/* invisible hover area */}
+        <div className="absolute top-full left-0 w-full h-4 bg-transparent" />
         <AnimatePresence>
           {activeDropdown === 'products' && (
             <SharedMegaMenu items={allProducts} type="Products" onClose={closeAll} />
@@ -103,6 +104,7 @@ const DesktopNav = ({ allProducts, allservices, activeDropdown, toggleDropdown, 
           Services
           <IoChevronDown className={`transition-transform duration-300 ${activeDropdown === 'services' ? 'rotate-180' : ''}`} />
         </button>
+        <div className="absolute top-full left-0 w-full h-4 bg-transparent" />
         <AnimatePresence>
           {activeDropdown === 'services' && (
             <SharedMegaMenu items={allservices} type="Services" onClose={closeAll} />
