@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoChevronDown } from "react-icons/io5";
-// constants/navbarData.js
 
 export const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -26,6 +25,21 @@ export const PRODUCTS = [
     title: "POS System",
     desc: "Retail management",
     href: "/products/pos",
+  },
+  {
+    title: "LMS",
+    desc: "Learning management system",
+    href: "/products/lms",
+  },
+  {
+    title: "Service",
+    desc: "Professional services",
+    href: "/products/service",
+  },
+  {
+    title: "SMS",
+    desc: "Messaging solutions",
+    href: "/products/sms",
   },
 ];
 
@@ -65,12 +79,10 @@ const Header = () => {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-screen-xl mx-auto px-5 py-3 flex items-center justify-between">
-        {/* Logo */}
         <Link href="/" className="text-xl font-bold">
           LOGO
         </Link>
 
-        {/* Nav */}
         <nav className="flex items-center gap-2">
           {NAV_LINKS.map((item, i) => (
             <Link
@@ -83,7 +95,6 @@ const Header = () => {
             </Link>
           ))}
 
-          {/* Products */}
           <div className="relative">
             <button
               onClick={() => toggle("products")}
@@ -119,7 +130,6 @@ const Header = () => {
             </AnimatePresence>
           </div>
 
-          {/* Services */}
           <div className="relative">
             <button
               onClick={() => toggle("services")}
@@ -155,7 +165,6 @@ const Header = () => {
             </AnimatePresence>
           </div>
 
-          {/* Get in Touch */}
           <div className="relative">
             <button
               onClick={() => toggle("touch")}
